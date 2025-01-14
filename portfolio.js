@@ -28,3 +28,12 @@ const sound = new Howl({
     }
     isPlaying = !isPlaying; // Toggle the playing state
   });
+
+  document.getElementById('download-btn').addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.href = './files/QihangWang_CV.pdf'; 
+    link.download = 'QihangWang_CV.pdf';    
+    document.body.appendChild(link);   
+    link.click();                     
+    document.body.removeChild(link);  
+  });
