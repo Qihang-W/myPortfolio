@@ -1,0 +1,112 @@
+.gradient-background {
+  background: linear-gradient(300deg, #0b0b70, #5922b0, #621841);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+}
+
+.profile-img {
+  border-radius: 50%;
+  height: 100px;
+}
+
+.custom-circle {
+  border-radius: 50%; 
+  object-fit: cover; 
+  width: 400px; 
+  height: 400px;
+}
+
+.custom-title {
+  font-family: "Ubuntu", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(253, 249, 249);                  
+}
+
+.custom-nav {
+  font-family: "Ubuntu", serif;
+  font-weight: 40;
+  font-style: normal;
+  color: rgb(253, 249, 249);    
+}
+
+.pattern-border-2 {
+  position: relative;
+  padding: 20px 40px; /* 给内容留出空间 */
+  background-color: #f9f9f9; /* 背景颜色 */
+}
+
+li {
+  text-indent: -20px; padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.player {
+  float: right;
+  margin-top: 20px; 
+  margin-right: 20px; 
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #444 20%, #222 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: spin 0s linear infinite;
+}
+
+.player::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.play-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.play-btn:hover {
+  background: #ff6b81;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
