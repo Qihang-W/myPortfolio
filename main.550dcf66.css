@@ -251,6 +251,10 @@ td, th {
     z-index: 1000;
   }
 
+  p{
+    color: #000;
+  }
+
 /* Further styles omitted for brevity */
 
 
