@@ -42,7 +42,9 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="./index.html" title="" style="color: aliceblue;">Home</a></li>
           <li><a href="https://www.linkedin.com/in/qihang-wang-72a411237/" title="" style="color: aliceblue;">Contact</a></li>
+          <button class="toggle-button" id="toggleMode">Dark Mode</button>
         </ul>
+        
       </div> 
     </div>
   </nav>
@@ -56,6 +58,7 @@
           <p> <strong>Green Guardians</strong> is an educational web platform 
             dedicated to supporting <strong>parents of children aged between 8 and 12 years</strong> in educating them about the critical issue of climate change. The platform’s primary goal is to provide comprehensive knowledge and resources aimed at raising awareness about  <strong>climate change's significance, its impacts, and sustainable practices</strong>. This initiative is driven by the pressing need to address escalating climate change challenges in Australia, such as rising temperatures, severe bushfires, coral degradation, and threats to biodiversity. <br>Furthermore, recognising the increasing awareness among Australian parents about climate change and their proactive efforts to incorporate sustainable habits into their children's lives, this project aims to empower the next generation with age-appropriate and engaging educational content. By equipping children with the necessary knowledge and practical skills, Green Guardians endeavours to inspire meaningful action toward a more sustainable future.</p>
           
+          <h3>Homepage</h3>
           <div class="swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -103,11 +106,46 @@
     <div class="container">
       <div class="row section-container-spacer">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
-          <h2 class="text-center">More</h2>
+            <p>Below is the main playground for the children after parents choosing our website for educational purpose. Children can use this platform to watch videos, play interactive games, complete checklists etc. to see how they contribute to a sustainable environment.</p>
+          <h3>Dashboard page</h3>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/dashboard.jpg" alt="" class="zoomable">
+              </div>
+            </div>
+            <!-- Swiper Navigation Buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+
+  <div class="section-container">
+    <div class="container">
+      <div class="row section-container-spacer">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <h2 class="text-center">More coming</h2>
           <div class="section-container-spacer">
             <p>
-          </div>  
-          <img src="./images/dashboard.jpg" alt="" class="img-responsive reveal-content" data-action="zoom">
+          </div>
+          
+          <h3>Game page (created using Unity)</h3>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/game1.jpg" alt="" class="zoomable">
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/game2.jpg" alt="" class="zoomable">
+              </div>
+            </div>
+            <!-- Swiper Navigation Buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
         </div>  
       </div>
     </div>
@@ -117,7 +155,6 @@
     <div class="container text-center">
       <div class="row section-container-spacer">
         <div class="col-xs-12 col-md-12">
-          
           <h3>I'm currently doing more projects and I'll keep updating them, please come back to me soon...</h3>
           <p>
             <a href="https://facebook.com/" class="social-round-icon fa-icon" title="">
@@ -149,6 +186,7 @@
   </div>
 </footer>
 
+<!-- import swiper package -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <script>
@@ -168,10 +206,40 @@
       loop: false,
   });
 
+// click to enlarge
   document.querySelectorAll('.zoomable').forEach(img => {
     img.addEventListener('click', (event) => {
       event.target.classList.toggle('enlarged');
     });
+  });
+</script>
+
+<!-- toggle the dark mode -->
+<script>
+  const toggleButton = document.getElementById('toggleMode');
+
+  const userPreference = localStorage.getItem('theme');
+  if (userPreference === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+
+  const enableTransition = () => {
+    document.body.classList.add('theme-transition');
+
+    setTimeout(() => {
+      document.body.classList.remove('theme-transition');
+    }, 500); 
+  };
+
+  toggleButton.addEventListener('click', () => {
+    enableTransition(); 
+    document.body.classList.toggle('dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
   });
 </script>
 
