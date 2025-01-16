@@ -1,5 +1,5 @@
 const sound = new Howl({
-    src: ['./audio/AfterHours.mp3', './audio/AfterHours.ogg'],
+    src: ['./audio/SmooveGroove.mp3', './audio/SmooveGroove.ogg'],
     html5: true, // Use HTML5 Audio for better performance  
   });
 
